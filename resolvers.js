@@ -3,7 +3,8 @@ const resolvers={
     Query:{
         getUsers:async(_,{id})=>{
             return await User.findById(id)
-        }
+        },
+        getAllUsers:async()=>{return await User.find()}
     },
     Mutation:{
         createUser:async(_,{input})=>{
@@ -35,3 +36,4 @@ const resolvers={
         password:(parent)=>parent.password || ''
     }
 }
+module.exports=resolvers;
